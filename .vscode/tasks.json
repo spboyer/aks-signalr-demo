@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/aks-signalr-demo.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build (AZDS)",
+            "command": "azds",
+            "args": [
+                "up",
+                "--iterate",
+                "--no-command",
+                "--no-telemetry"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
